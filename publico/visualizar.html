@@ -8,18 +8,14 @@
   </head>
   <body>
     <!--<img id="play" src="" alt="" />-->
-    <video width="320" height="240" id="play" controls>
-      <source src="movie.mp4" type="video/mp4" />
-      <source src="movie.ogg" type="video/ogg" />
-      Your browser does not support the video tag.
-    </video>
+    <video width="320" height="240" id="play" controls></video>
     <div id="logger"></div>
     <script type="text/javascript">
       var socket = io();
       socket.on("stream", function (image) {
         console.log('CONNECT');
         var img = document.getElementById("play");
-        img.src = image;
+        img.srcObject  = image;
         $("#logger").text(image);
       });
     </script>
