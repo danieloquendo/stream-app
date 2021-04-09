@@ -45,7 +45,7 @@
       }
       function viewVideo(video, context) {
         console.log("EMIT");
-        context.drawImage(video, 0, 0, context.width, context.height);
+        //context.drawImage(video, 0, 0, context.width, context.height);
         socket.emit("stream", canvas.toDataURL("image/webp"));
       }
       $(function () {
