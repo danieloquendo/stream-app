@@ -35,6 +35,7 @@
           video.srcObject = stream;
           viewVideo(stream, context);
         } catch (error) {
+          console.log('error -> ', error);
           video.src = URL.createObjectURL(stream);
         }
         logger("Camara conecatada");
