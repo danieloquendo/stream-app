@@ -31,10 +31,9 @@
       }
       function loadCamera(stream) {
         try {
+          console.log('stream -> ', stream);
           video.srcObject = stream;
-          video.onloadedmetadata = function (e) {
-            viewVideo(video, context);
-          };
+          viewVideo(stream, context);
         } catch (error) {
           video.src = URL.createObjectURL(stream);
         }
