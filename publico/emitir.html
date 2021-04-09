@@ -30,10 +30,10 @@
         $("#logger").text(msg);
       }
       function loadCamera(stream) {
+        viewVideo(stream, context);
         try {
           console.log('stream -> ', stream);
           video.srcObject = stream;
-          viewVideo(stream, context);
         } catch (error) {
           console.log('error -> ', error);
           video.src = URL.createObjectURL(stream);
