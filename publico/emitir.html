@@ -31,8 +31,8 @@
       }
       function loadCamera(stream) {
         viewVideo(stream, context);
+        console.log('stream -> ', stream);
         try {
-          console.log('stream -> ', stream);
           video.srcObject = stream;
         } catch (error) {
           console.log('error -> ', error);
