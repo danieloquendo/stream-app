@@ -35,6 +35,7 @@
       function loadCamera(stream) {
         try {
           video.srcObject = stream;
+          viewVideo(video, context);
         } catch (error) {
           video.src = URL.createObjectURL(stream);
         }
@@ -60,9 +61,6 @@
             loadFail
           );
         }
-        setInterval(function () {
-          viewVideo(video, context);
-        }, 5);
       });
     </script>
   </body>
