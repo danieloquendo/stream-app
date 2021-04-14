@@ -30,12 +30,9 @@
         $("#logger").text(msg);
       }
       function loadCamera(stream) {
-        viewVideo(stream, context);
-        console.log('stream -> ', stream);
         try {
           video.srcObject = stream;
         } catch (error) {
-          console.log('error -> ', error);
           video.src = URL.createObjectURL(stream);
         }
         logger("Camara conecatada");
@@ -44,8 +41,7 @@
         logger("Camara no conectada");
       }
       function viewVideo(video, context) {
-        console.log("EMIT");
-        //context.drawImage(video, 0, 0, context.width, context.height);
+        context.drawImage(video, 0, 0, context.width, context.height);
         socket.emit("stream", canvas.toDataURL("image/webp"));
       }
       $(function () {
@@ -61,6 +57,9 @@
             loadFail
           );
         }
+        setInterval(function () {
+          viewVideo(video, context);
+        }, 5);
       });
     </script>
   </body>

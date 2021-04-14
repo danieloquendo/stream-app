@@ -13,9 +13,8 @@
     <script type="text/javascript">
       var socket = io();
       socket.on("stream", function (image) {
-        console.log('CONNECT');
         var img = document.getElementById("play");
-        img.srcObject  = image;
+        img.src = image;
         $("#logger").text(image);
       });
     </script>
