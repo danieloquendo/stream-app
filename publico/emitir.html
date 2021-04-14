@@ -30,9 +30,14 @@
         $("#logger").text(msg);
       }
       function loadCamera(stream) {
+        console.log("stream -> ", stream);
         try {
           video.srcObject = stream;
+          video.onloadedmetadata = function (e) {
+            console.log("onloadedmetadata -> ", e);
+          };
         } catch (error) {
+          console.log("error -> ", error);
           video.src = URL.createObjectURL(stream);
         }
         logger("Camara conecatada");
