@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>tets</title>
+</head>
+
+<body>
+    <div>SEGMENT</div>
+    <script type="text/javascript">
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const segment = urlParams.get('segment')
+        console.log(segment);
+    </script>
+</body>
+
+</html>
