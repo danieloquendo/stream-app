@@ -20,6 +20,7 @@
         };
 
         if (segment) {
+            console.log('CALL');
             fetch("https://exito.vtexcommercestable.com.br/api/catalog_system/pub/products/search/bavaria?map=b&cookie=" + segment, requestOptions)
                 .then(response => response.text())
                 .then(result => console.log('SEGMENT RESULT', result))
