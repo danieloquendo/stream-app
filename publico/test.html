@@ -20,10 +20,11 @@
         };
 
 
-        fetch("https://exito.vtexcommercestable.com.br/api/catalog_system/pub/products/search/bavaria?map=b&cookie=" + segment, requestOptions)
+        fetch(`https://external-middleware.herokuapp.com?brand=samsung&segment=${segment}`, requestOptions)
             .then(response => response.text())
-            .then(result => console.log('SEGMENT RESULT', result))
+            .then(result => console.log('SEGMENT RESULT 2 -> ', result))
             .catch(error => console.log('error', error));
+
 
     </script>
 </body>
